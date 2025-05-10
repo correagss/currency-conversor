@@ -1,7 +1,7 @@
 from asyncio import gather
 from fastapi import APIRouter, Path, Query
-from converter import sync_converter, async_converter
-from schamas import ConverterInput, ConverterOutput
+from library.converter import sync_converter, async_converter
+from library.schamas import ConverterInput, ConverterOutput
 
 router = APIRouter(prefix= '/converter')
 
