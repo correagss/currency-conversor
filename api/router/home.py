@@ -5,7 +5,7 @@ router = APIRouter(tags=["Home"])
 
 # Redirects '/' to '/docs'
 @router.get("/", include_in_schema=False)
-def redirect_to_docs():
+def home():
     return RedirectResponse(url="/docs")
 
 # Health check endpoint

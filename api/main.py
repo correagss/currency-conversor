@@ -2,14 +2,15 @@ import uvicorn
 from fastapi import FastAPI
 
 # Imports routers
-from router.home import router as home_router
+from router.home        import router as home_router
+from router.conversor   import router as conversor_router
 
 # Creates FastAPI application
 app = FastAPI(title="Minha API FastAPI")
 
 # Include routers
 app.include_router(home_router)
-
+app.include_router(conversor_router)
 
 
 # Startups application
