@@ -1,18 +1,18 @@
 import uvicorn
 from fastapi import FastAPI
 
+# Imports routers
+from router.home import router as home_router
 
+# Creates FastAPI application
 app = FastAPI(title="Minha API FastAPI")
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, CALABRESO com Uvicorn!"}
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None):
-    return {"item_id": item_id, "q": q}
+# Include routers
+app.include_router(home_router)
 
 
+
+# Startups application
 if __name__ == "__main__":
     uvicorn.run(
         "main:app",           # módulo:variável da app
