@@ -1,32 +1,40 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
+from model.conversor import ConverterSingleInput, ConverterOutput
+from service.conversor import ConversorService
+
 router = APIRouter(tags=["Conversor"])
 
-def working_function():
-    return "This is a working function!"
-
-
-def not_working_function():
-    raise Exception("Error")
-
-
-def multiplier(a, b):
-    result = a * b
+# "manual" conversor endpoint
+@router.post("/manual/")
+def convert_manual(value: int, factor: int):
     
-    return result
-
-# "from" conversor endpoint
-@router.get("/from/{currency}")
-def convert_from(currency: str, value: int, factor: int):
+    result = value * factor
     
-    result = multiplier(value, factor)
-    
-    working_function()
-    
-    not_working_function()
-
     return JSONResponse(
-        content={"result": f"Result converting '{currency}': {result}"},
+        content={
+            "message": f"Result from manual conversion of value * factor: '{value} * {factor}' is {result}",
+            "content": result
+        },
+        status_code=200
+    )
+
+
+# "single" conversor endpoint
+@router.post("/single/", response_model=ConverterOutput)
+def convert_single(payload: ConverterSingleInput) -> ConverterOutput:
+    service = ConversorService()
+    
+    result = service.convert(
+        from_currency=payload.from_currency,
+        to_currency=payload.to_currency,
+        value=payload.value
+    )
+    
+    output = ConverterOutput(**payload.model_dump(), result=result)
+    
+    return JSONResponse(
+        content=output.model_dump(),
         status_code=200
     )
