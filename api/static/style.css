@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4026b3;
+    margin: 0;
+    background-image: url("imagens/fundo.jpg"); /* Substitua pelo caminho real da sua imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-size: cover; /* Cobre todo o elemento, cortando se necessário */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página (opcional) */
+}
+
+.container {
+    background-color: #4095bc;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result-box {
+    background-color: #e9f5ff;
+    border: 1px solid #cce5ff;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.result-box p {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+#conversionResult {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 15px;
+    font-weight: bold;
+}
