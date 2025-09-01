@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pathlib import Path
 
-# Define o BASE_DIR para o diretório atual (onde main.py está)
+# Define o BASE_DIR para o diretório atual (onde main.py está)aa
 BASE_DIR = Path(__file__).resolve().parent
 
 # Imports routers (agora usando importações relativas)
