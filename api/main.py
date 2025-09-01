@@ -1,19 +1,17 @@
-import sys
-from pathlib import Path
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from pathlib import Path
 
-# Adiciona a raiz do projeto ao sys.path para conseguir importar router
+# Define o BASE_DIR para o diretório atual (onde main.py está)
 BASE_DIR = Path(__file__).resolve().parent
-ROOT_DIR = BASE_DIR.parent
-sys.path.append(str(ROOT_DIR))
 
-# Imports routers
-from router.home import router as home_router
-from router.conversor import router as conversor_router
+# Imports routers (agora usando importações relativas)
+# Como 'router' é uma subpasta dentro de 'api' (onde main.py está), usamos o '.'
+from .router.home import router as home_router
+from .router.conversor import router as conversor_router
 
 # Cria a aplicação FastAPI
 app = FastAPI(title="Minha API FastAPI")
@@ -21,13 +19,14 @@ app = FastAPI(title="Minha API FastAPI")
 # Habilita CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # depois você pode trocar "*" por ["http://localhost:5500"] ou outra origem
+    allow_origins=["*"],  # Você pode trocar "*" por ["http://localhost:5500"] ou outra origem
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Serve a pasta "static"
+# A pasta 'static' também está dentro de 'api', então usamos BASE_DIR / "static"
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
 # Rota para abrir o index.html na raiz "/"
