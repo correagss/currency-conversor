@@ -39,8 +39,7 @@ app.include_router(conversor_router)
 # Startups application
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",           # módulo:variável da app
-        host="0.0.0.0",       # acessível externamente
-        port=8000,            # porta
-        reload=True           # recarregar em modo dev
+        "main:app",       # módulo:variável da app
+        host="0.0.0.0",   # acessível externamente
+        port=8000         # porta local (Render vai usar $PORT)
     )
