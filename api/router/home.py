@@ -15,4 +15,3 @@ def health():
         content={"status": "Success"},
         status_code=200
     )
-
