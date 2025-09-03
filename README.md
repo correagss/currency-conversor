@@ -29,17 +29,11 @@ RESTful API backend powered by FastAPI.
 
 # 🛠️ Tech Stack
 
-*  **Backend**: 
-* Python 
-* FastAPI
+*  **Backend:** Python, FastAPI 
 
-*  **Frontend:** 
-* JavaScript 
-* HTML 5
-* CSS3
+*  **Frontend:** HTML, CSS and JavaScript
 
-* **Deployment:** 
-* Render
+* **Deployment:** Render
 
 ---
 
