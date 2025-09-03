@@ -1,47 +1,91 @@
-# Conversor de Moedas
 
-Este é um projeto simples e prático desenvolvido em **Python** com **FastAPI**, criado para realizar conversões entre moedas em tempo real. Ele consulta cotações diretamente da API externa [Alpha Vantage](https://www.alphavantage.co/), oferecendo precisão e atualização constante.
+# 💵 Currency Converter API
 
-O sistema é estruturado com boas práticas de organização (rotas separadas, validações com Pydantic e lógica modularizada), servindo como um ótimo ponto de partida para quem está aprendendo **FastAPI**, integração com APIs externas e desenvolvimento de APIs REST.
+A simple and fast currency converter application built with a FastAPI backend and a vanilla JavaScript frontend.
 
-Ideal para fins de estudo, testes com requisições assíncronas e aplicações que envolvem conversão de moedas.
+🚀 Check out the live demo: https://currency-conversor-7.onrender.com
 
-##Funcionalidades
-
-- Seleção de moeda de origem e destino.
-- Atualização dinâmica das opções de moeda de destino com base na moeda de origem
-selecionada.
-- Exibição da taxa de câmbio atualizada entre as moedas selecionadas, obtida através da Alphavantage
-
-## Tecnologias utilizadas
-
-- Python
-- [Alphavantage] (https://www.alphavantage.co/documentation/) (para obter as cotações)
-- Insomnia (para testar a API)
+<img width="1785" height="1234" alt="screenshot" src="https://github.com/user-attachments/assets/3124483e-085b-44d4-9367-1ac92770248f" />
 
 
-## Instalação e Execução
+---
 
-Siga os passos abaixo para rodar o projeto localmente:
+# 📝 About The Project
+
+This project is a web-based currency converter. It features a backend API built with Python and FastAPI that fetches real-time exchange rates from an external service, and a clean user interface created with vanilla JavaScript, HTML, and CSS.
+
+---
+
+# ⭐ Key Features
+
+Convert values between multiple currencies (USD, EUR, BRL, etc.).
+
+Clean and simple user interface.
+
+Utilizes real-time exchange rate data.
+
+RESTful API backend powered by FastAPI.
+
+---
+
+# 🛠️ Tech Stack
+
+*  **Backend:** Python, FastAPI 
+
+*  **Frontend:** HTML, CSS and JavaScript
+
+* **Deployment:** Render
+
+---
 
 
-### 1. Clone este repositório
+# ⚙️ How to Run Locally
 
+To get a local copy up and running, follow these simple steps.
+
+---
+
+# 🔑 Prerequisites
+
+Python 3.8+
+
+An API Key from ExchangeRate-API
+
+---
+
+# 📦 Installation
+
+**1. Clone the repository:**
 ```bash
-git clone https://github.com/seu-usuario/conversor-de-moedas.git
-cd conversor-de-moedas
+git clone https://github.com/correagss/currency-conversor.git
+cd currency-conversor
+```
+
+**2. Create and activate a virtual environment:**
+```bash
+(For Windows)
+python -m venv venv
+.\venv\Scripts\activate
+
+(For macOS/Linux)
+python3 -m venv venv
+source venv/bin/activate
+```
 
 
-### 2. Instale as dependências
-
+**3. Install the required packages:**
+```bash
 pip install -r requirements.txt
 
-### 3. Execute o servidor FastAPI
+4. Set up your environment variables:
+Create a file named .env in the root directory of the project and add your API key:
 
-uvicorn main:app --reload
+API_KEY=your_exchangerate_api_key_here
+```
 
-### 4. Acesse a API no navegador
+**5. Run the application:**
+The application will be available at http://localhost:8000.
 
-API: http://127.0.0.1:8000
-
-Documentação Swagger: http://127.0.0.1:8000/docs
+```bash
+uvicorn api.main:app --reload
+```
