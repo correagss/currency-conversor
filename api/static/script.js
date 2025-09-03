@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         errorMessage.textContent = '';
 
         if (isNaN(value) || value <= 0) {
-            errorMessage.textContent = 'Por favor, insira um valor válido e positivo.';
+            errorMessage.textContent = 'Please enter a valid, positive value.';
             return;
         }
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) {
                 // Tenta ler a resposta de erro como JSON, se falhar, usa o texto do status
-                let errorMsg = `Erro na API: ${response.status} ${response.statusText}`;
+                let errorMsg = `API error: ${response.status} ${response.statusText}`;
                 try {
                     const errorData = await response.json();
                     errorMsg = errorData.detail || errorMsg;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             conversionResult.textContent = `${data.result.toFixed(2)} ${toCurrency}`;
 
         } catch (error) {
-            console.error('Erro ao converter:', error);
+            console.error('Convert error:', error);
             // Mostra a mensagem de erro que vem da API ou do fetch
             errorMessage.textContent = `${error.message}`;
         }
