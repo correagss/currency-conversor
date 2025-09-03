@@ -5,7 +5,7 @@ A simple and fast currency converter application built with a FastAPI backend an
 
 🚀 Check out the live demo: https://currency-conversor-7.onrender.com
 
-![Currency Converter Demo](static/imagens/screenshot.png)
+![Currency Converter Demo](assets/screenshot.png)
 
 # 📝 About The Project
 
